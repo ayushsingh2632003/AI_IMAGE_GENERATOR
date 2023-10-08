@@ -18,4 +18,21 @@ const showMore = document.getElementById("show-more-button")
     if(page===1){
         searchResult.innerHTML=""
     }
+
+    results.map((result)=>{
+        const imageWrapper=document.createElement('div');
+        imageWrapper.classList.add("search-results");
+        const image = document.createElementNS('img');
+        image.src = result.urls.small;
+        image.alt=result.alt_description;
+        const imageLink = document.createElement('a');
+        imageLink.href=result.links.html;
+        imageLink.target="_blank";
+        imageLink.textContent = result.alt_description;
+
+        imageWrapper.appendChild(image);
+        imageWrapper.appendChild(imageLink);
+        imageWrapper.appendChild(imageWrapper);
+
+    });
  }
