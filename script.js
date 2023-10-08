@@ -32,7 +32,21 @@ const showMore = document.getElementById("show-more-button")
 
         imageWrapper.appendChild(image);
         imageWrapper.appendChild(imageLink);
-        imageWrapper.appendChild(imageWrapper);
+        searchResult.appendChild(imageWrapper);
+
 
     });
+
+    page++
+    if(page>1){
+        showMore.style.display = "block"
+    }
  }
+ formE1.addEventListener("submit",(event)=>{
+    event.preventDefault()
+    page=1;
+    searchImages()
+ })
+ showMore.addEventListener("submit",()=>{
+    searchImages()
+ })
